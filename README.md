@@ -1,2 +1,2 @@
 # test-technique
-test-technique
+test-technique Symfony
