@@ -56,7 +56,7 @@ class CustomerType extends AbstractType
                     'label' => 'Mail :',
                     'required' => true,
                     'attr' => [
-                        'placeholder' => "entrer l'email",
+                        'placeholder' => "Entrer l'email",
                         'class' => 'form-control'
                     ]
                 ]
@@ -65,10 +65,10 @@ class CustomerType extends AbstractType
                 'phoneNumber',
                 NumberType::class,
                 [
-                    'label' => 'Téléphone :',
+                    'label' => 'Téléphone (FR) :',
                     'required' => true,
                     'attr' => [
-                        'placeholder' => 'Entrer le numéro de téléphone',
+                        'placeholder' => '0605040302',
                         'class' => 'form-control'
                     ]
                 ]

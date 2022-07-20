@@ -55,7 +55,7 @@ class MaterialType extends AbstractType
                     'label' => 'Catégorie :',
                     'required' => true,
                     'attr' => [
-                        'placeholder' => 'Entrer la catégorie  du materiel',
+                        'placeholder' => 'Entrer la catégorie du materiel',
                         'class' => 'form-control'
                     ]
                 ]
@@ -67,7 +67,7 @@ class MaterialType extends AbstractType
                     'label' => 'Référence :',
                     'required' => true,
                     'attr' => [
-                        'placeholder' => 'Entrer la référence  du materiel',
+                        'placeholder' => 'Entrer la référence du materiel',
                         'class' => 'form-control'
                     ]
                 ]

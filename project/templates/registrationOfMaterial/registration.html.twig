@@ -15,7 +15,7 @@
                 <div class="alert alert-success">
                     <strong>{{ goldCustomer.firstName }} {{ goldCustomer.lastName }} </strong> est le client le plus
                     rentable avec un prix total d'achat égale à :
-                    <span class="price"> {{ goldCustomer.sumPrice }} € </span>
+                    <span class="price"> {{ goldCustomer.sumPrice|number_format(2, '.', ' ') }}  € </span>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -42,7 +42,7 @@
                                             <td class="text-center text-muted"
                                                 style="white-space: pre-wrap">{{ registration.countMateriel }}</td>
                                             <td class="text-center text-muted"
-                                                style="white-space: pre-wrap">{{ registration.sumPrice }} €
+                                                style="white-space: pre-wrap">{{ registration.sumPrice|number_format(2, '.', ' ') }}  €
                                             </td>
                                         </tr>
                                     {% endfor %}

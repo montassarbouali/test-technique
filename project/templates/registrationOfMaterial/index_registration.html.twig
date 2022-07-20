@@ -6,8 +6,8 @@
 {% endblock %}
 {% block content %}
     <div class="row">
-        <div class="col-md-8">
-            <h2 class="title"> Liste des enregistrements </h2>
+        <div class="col-md-12">
+            <h2 class="title">La liste des clients qui ont plus de 30 matériels avec un total supérieur à 30 000 €</h2>
         </div>
         {% if registrations|length > 0 %}
         <div class="col-md-12">
@@ -37,7 +37,7 @@
                                             <td class="text-center text-muted"
                                                 style="white-space: pre-wrap">{{ registration.countMateriel }}</td>
                                             <td class="text-center text-muted"
-                                                style="white-space: pre-wrap">{{ registration.sumPrice }} €
+                                                style="white-space: pre-wrap">{{ registration.sumPrice|number_format(2, '.', ' ') }} €
                                             </td>
                                         </tr>
                                     {% endfor %}
@@ -47,7 +47,7 @@
                             {% else %}
                                 <div class="dataTables_wrapper dt-bootstrap4">
                                     <div class="alert alert-warning" role="alert">
-                                        Aucun enregistrement enregistré
+                                        Aucune statistique remontée
                                     </div>
                                 </div>
                             {% endif %}

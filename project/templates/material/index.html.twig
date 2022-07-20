@@ -44,7 +44,7 @@
                                                 <td class="text-center text-muted"
                                                     style="white-space: pre-wrap">{{ material.reference }}</td>
                                                 <td class="text-center text-muted"
-                                                    style="white-space: pre-wrap">{{ material.price }} €
+                                                    style="white-space: pre-wrap">{{ material.price|number_format(2, '.', ' ') }} €
                                                 </td>
                                                 <td class="text-center">
                                                     <a href="{{ path('app_material_edit', {id: material.id }) }}"
