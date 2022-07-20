@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-8" >
+            <h2 class="title"> Ajout d'un nouveau matériel  </h2>
+        </div>
+        <div class="col-md-12">
+            <div class="main-card mb-3 card">
+                <div class="card-body">
+                    <div class="dataTables_wrapper dt-bootstrap4">
+                        {{ form_start(myform) }}
+                        {{ form_end(myform) }}
+                    </div>
+                </div>
+                <br />
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('assets/js/app.js') }}"></script>
+{% endblock %}

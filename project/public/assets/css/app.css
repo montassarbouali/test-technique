@@ -1,0 +1,18 @@
+.error {
+    border-color: red;
+}
+
+.title {
+    margin-bottom: 5%;
+    margin-top: 5%;
+    color: darkgray;
+}
+
+.price {
+    font-size: large;
+    color: red
+}
+
+#order-table {
+   width:100% !important;
+}

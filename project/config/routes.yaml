@@ -1,0 +1,54 @@
+#Customer routes
+app_customer_index:
+  path: /customers
+  controller: App\Controller\CustomerController::find
+
+app_customer_new:
+  path: /customers/new
+  controller: App\Controller\CustomerController::create
+
+app_customer_edit:
+  path: /customers/{id}/edit
+  controller: App\Controller\CustomerController::update
+
+app_customer_disabled:
+  path: /customers/{id}/disabled
+  controller: App\Controller\CustomerController::disabled
+
+
+#Materiel routes
+app_material_index:
+  path: /materials
+  controller: App\Controller\MaterialController::find
+
+app_material_new:
+  path: /materials/new
+  controller: App\Controller\MaterialController::create
+
+app_material_edit:
+  path: /materials/{id}/edit
+  controller: App\Controller\MaterialController::update
+
+app_material_disabled:
+  path: /material/{id}/disabled
+  controller: App\Controller\MaterialController::disabled
+
+
+# Registration routes
+app_registration_index:
+  path: /
+  controller: App\Controller\RegistrationController::index
+
+app_registration_material:
+  path: /registration
+  controller: App\Controller\RegistrationController::filterRegistration
+
+
+#Purshase routes
+app_purchase_material:
+  path: /purchase
+  controller: App\Controller\PurchaseMaterialController::index
+
+app_save_purchase_material:
+  path: /purchase/save
+  controller: App\Controller\PurchaseMaterialController::save

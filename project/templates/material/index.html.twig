@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-8">
+            <h2 class="title"> Liste des materiels </h2>
+        </div>
+        <div class="col-md-12">
+            <div class="main-card mb-3 card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-9"></div>
+                        <div class="col-md-3">
+                            <a href="{{ path('app_material_new') }}">
+                                <button class="mb-2 mr-2 btn btn-primary" style="margin-bottom: 5%">
+                                    <i class="pe-7s-note"> </i>
+                                    Ajouter un matériel
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            {% if materials|length > 0 %}
+                                <div class="dataTables_wrapper dt-bootstrap4">
+                                    <table id="order-table"
+                                           class="table table-hover table-striped table-bordered dataTable dtr-inline"
+                                           >
+                                        <thead>
+                                        <tr>
+                                            <th class="text-center">Nom</th>
+                                            <th class="text-center">Catégorie</th>
+                                            <th class="text-center">Référence</th>
+                                            <th class="text-center">Prix</th>
+                                            <th class="text-center">Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for material in materials %}
+                                            <tr>
+                                                <td class="text-center text-muted"
+                                                    style="white-space: pre-wrap">{{ material.name }}</td>
+                                                <td class="text-center text-muted"
+                                                    style="white-space: pre-wrap">{{ material.category }}</td>
+                                                <td class="text-center text-muted"
+                                                    style="white-space: pre-wrap">{{ material.reference }}</td>
+                                                <td class="text-center text-muted"
+                                                    style="white-space: pre-wrap">{{ material.price }} €
+                                                </td>
+                                                <td class="text-center">
+                                                    <a href="{{ path('app_material_edit', {id: material.id }) }}"
+                                                       title="Edit">
+                                                        <button type="button" id="PopoverCustomT-1"
+                                                                class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-primary"
+                                                                style="font-size: xx-small">Modifier
+                                                        </button>
+                                                    </a>
+                                                    <a href="{{ path('app_material_disabled', {id: material.id }) }}"
+                                                       title="Delete">
+                                                        <button type="button" id="PopoverCustomT-1"
+                                                                class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-danger"
+                                                                style="font-size: xx-small"> Supprimer
+                                                        </button>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            {% else %}
+                                <div class="dataTables_wrapper dt-bootstrap4">
+                                    <div class="alert alert-warning" role="alert">
+                                        Aucun matériel enregistré
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+{% endblock %}
